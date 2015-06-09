@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>::. Estudiantes .::</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="../ajax/ajax.js"></script>
+
+ </script>
+</head>
+
+<body>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            <label>Grado:</label>
+          <select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+  <option>11</option>
+</select>
+ 
+<label>Grupo:</label>
+          <select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+<label>Estado: </label>
+<select class="form-control">
+  <option>Todos</option>
+  <option>Activo</option>
+  <option>Inactivo</option>
+ </select>
+</br>
+<a href="../index.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<!-- Resta importancia al botón haciéndolo parecer un simple enlace,
+     aunque conserva tu comportamiento original de botón -->
+<a href="Estudiantes.html"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Inicio Ventana Docente -->
+<div class="modal fade" id="Docente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            
+<label>Estado: </label>
+<select class="form-control">
+  <option>Todos</option>
+  <option>Activo</option>
+  <option>Inactivo</option>
+ </select>
+</br>
+<a href="../index.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Docente.html"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div><!-- Fin Ventana Docente -->
+<!-- Inicio Ventana Asignatura -->
+<div class="modal fade" id="Asignatura" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            
+<label>Grado: </label>
+<select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+ </select>
+</br>
+<a href="../index.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Asignatura.html"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana Asignatura -->
+<!-- Inicio Ventana Cursos -->
+<div class="modal fade" id="Cursos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            
+<label>Cursos: </label>
+<select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+ </select>
+</br>
+<a href="../index.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Cursos.html"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana Cursos -->
+<!-- Inicio Ventana CambiarEstado -->
+<div class="modal fade" id="CambiarEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            
+<label>Estado: </label>
+<select class="form-control">
+  <option>Activo</option>
+  <option>Inactivo</option>
+  
+ </select>
+</br>
+<a href="Estudiantes.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Estudiantes.html"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana CambiarEstado -->
+<!-- Inicio Ventana Editar Estudiante -->
+<div class="modal fade" id="Editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+        <label>ID</label>
+         <input class="form-control" id="campoDeshabilitado" type="text" placeholder="12345" disabled>
+          <label>Nombres</label>
+        <input type="text" class="form-control" placeholder="" pattern="[0-9]+" required id="txtnombre">
+        
+        <label>Apellidos</label>
+        <input type="text" class="form-control" placeholder="" pattern="[0-9]+" required id="txtnombre">
+        
+<label>Estado: </label>
+
+<select class="form-control">
+  <option>Activo</option>
+  <option>Inactivo</option>
+  
+ </select>
+</br>
+<a href="Estudiantes.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Estudiantes.html"><button type="button" class="btn btn-success" >Modificar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana EditarEstudiante -->
+<!-- Inicio Ventana VerNotas -->
+<div class="modal fade" id="VerNotas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+               
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 align="center"> Notas Estudiante</h3>
+                        </div>
+                       <div class="panel-body">
+                            <div class="table-responsive">
+                            <form action="" method="get"> 
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Materia</th>
+                                            <th>Nota #1</th>
+                                            <th>Nota #2</th>
+                                            <th>Nota #3</th>
+                                            <th>Nota #4</th>
+                                            <th>Nota Final</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Naturales</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                            <td>4,5</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sociales</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                            <td>4,5</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Espa&ntilde;ol</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                            <td>4,5</td>
+                                            <td>4</td>
+                                            <td>4,5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                               <a href="Estudiantes.html"><button type="button" class="btn btn-danger">Salir</button></a>
+                               <a href="Estudiantes.html"><button type="button" class="btn btn-success" >Exportar</button></a>
+                </form>
+      </div>
+                            <!-- /.table-responsive -->
+    </div>
+                        <!-- /.panel-body -->
+  </div>
+                    <!-- /.panel -->
+                </div>
+                </div>
+                </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana VerNotas -->
+<!-- Inicio Ventana Horario -->
+<div class="modal fade" id="Horario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+               
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 align="center"> Horario Grupo</h3>
+                        </div>
+                       <div class="panel-body">
+                            <div class="table-responsive">
+                            <form action="" method="get"> 
+                                 <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Hora</th>
+                                            <th>Lunes</th>
+                                            <th>Martes</th>
+                                            <th>Mi&eacute;rcoles</th>
+                                            <th>Jueves</th>
+                                            <th>Viernes</th>
+                                        </tr>
+                                    </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td>6:00 - 6:59 a.m.</td>
+                                            <td>Matemáticas</td>
+                                            <td>Matem&aacute;ticas</td>
+                                            <td>Inglés</td>
+                                            <td>Religi&oacute;n</td>
+                                            <td>4,5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7:00 - 7:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Matemáticas</td>
+                                            <td>4,5</td>
+                                            <td>Religión</td>
+                                            <td>4,5</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="40">8:00 - 8:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Ingl&eacute;s</td>
+                                            <td>4,5</td>
+                                            <td>Inform&aacute;tica</td>
+                                            <td>4,5</td>
+                                      </tr>
+                                       <tr>
+                                            <td height="40">9:00 - 9:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Ingl&eacute;s</td>
+                                            <td>4,5</td>
+                                            <td>Inform&aacute;tica</td>
+                                            <td>4,5</td>
+                                      </tr>
+                                       <tr>
+                                            <td height="40">10:00 - 10:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Ingl&eacute;s</td>
+                                            <td>4,5</td>
+                                            <td>Inform&aacute;tica</td>
+                                            <td>4,5</td>
+                                      </tr>
+                                      <tr>
+                                            <td height="40">11:00 - 11:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Ingl&eacute;s</td>
+                                            <td>4,5</td>
+                                            <td>Inform&aacute;tica</td>
+                                            <td>4,5</td>
+                                      </tr>
+                                       <tr>
+                                            <td height="40">12:00 - 12:59 a.m.</td>
+                                            <td>4</td>
+                                            <td>Ingl&eacute;s</td>
+                                            <td>4,5</td>
+                                            <td>Inform&aacute;tica</td>
+                                            <td>4,5</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                               <a href="Estudiantes.html"><button type="button" class="btn btn-danger">Salir</button></a>
+                               <a href="Estudiantes.html"><button type="button" class="btn btn-success" >Exportar</button></a>
+                </form>
+      </div>
+                            <!-- /.table-responsive -->
+    </div>
+                        <!-- /.panel-body -->
+  </div>
+                    <!-- /.panel -->
+                </div>
+                </div>
+                </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana Horario -->
+
+<!-- Inicio Ventana Agregar Estudiante -->
+<div class="modal fade" id="AgregarEstudiante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+        <label>ID</label>
+        <input type="text" class="form-control" placeholder="" pattern="[0-9]+" required id="txtnombre">
+         <label>Nombres</label>
+        <input type="text" class="form-control" placeholder="" pattern="[0-9]+" required id="txtnombre">
+        
+        <label>Apellidos</label>
+        <input type="text" class="form-control" placeholder="" pattern="[0-9]+" required id="txtnombre">
+       
+  
+ </select>
+</br>
+<a href="Estudiantes.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="Estudiantes.html"><button type="button" class="btn btn-success" >Agregar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana Agregar Estudiante  -->
+<!-- Inicio Ventana Ver Notas -->
+<div class="modal fade" id="vernotas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form action="" method="get">
+            
+<label>Materia: </label>
+<select class="form-control">
+  <option>Naturales</option>
+  <option>Matematicas</option>
+  <option>Sociales</option>
+  <option>Ingles</option>
+  
+ </select>
+</br>
+<a href="Estudiantes.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+ 
+<a href="NotasGrupo.html" title="Ver Notas"><button type="button" class="btn btn-success" >Aceptar</button></a>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Ventana Ver Notas -->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">School Admin</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                      <li>
+                          <a href="../index.html"><i class="fa fa-home fa-fw"></i>Inicio</a>
+                        </li>
+                      <li>
+                     <a class="fa fa-graduation-cap fa-1x" data-toggle="modal" data-target="#exampleModal" href="">Estudiante</a>
+                          
+                        </li>
+                         <li>
+                     <a class="fa fa-user fa-1x" data-toggle="modal" data-target="#Docente" href="">Docente</a>
+                          
+                        </li>
+                        <li>
+                            <a class="fa fa-book fa-1x" data-toggle="modal" data-target="#Asignatura" href="">Asignatura</a>
+                        </li>
+                        <li>
+                            <a class="fa fa-edit fa-1x" data-toggle="modal" data-target="#Cursos" href="">Curso</a>
+                        </li>
+                        <li>
+                            <a href="javascript:mostrarContenido('Perfil.html')"><i class="fa fa-info fa-fw"></i>Perfil</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Grado: 6 Grupo: 3</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> 
+                       
+                        <button type="button"  data-toggle="modal" data-target="#AgregarEstudiante" class="fa fa-plus fa-1x btn btn-danger"> Agregar</button>
+                        
+<a href="#" title="Cambiar estado" data-toggle="modal" data-target="#Horario"> <button type="button" class="fa fa-calendar fa-1x btn btn-success"> Horario</button> </a>
+                    
+                      
+ <a href="#" title="Notas de Grupo" data-toggle="modal" data-target="#vernotas"><button type="button" class="fa fa-book  fa-1x btn btn-warning">Notas Del Grupo</button></a>
+                        
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>ID</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td>1</td>
+                                            <td>12345</td>
+                                            <td>Juan Manuel</td>
+                                            <td class="center">Castaño</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" data-toggle="modal" data-target="#CambiarEstado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar"  data-toggle="modal" data-target="#Editar"class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" data-toggle="modal" data-target="#VerNotas"class="fa fa-search fa-2x"></td>
+                                                <td><a href="javascript:mostrarContenido('HistorialEstudiante.html')" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>2</td>
+                                            <td>12346</td>
+                                            <td>Luis</td>
+                                            <td class="center">Arrieta</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>3</td>
+                                            <td>12347</td>
+                                            <td>Maria</td>
+                                            <td class="center">Castro</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>4</td>
+                                            <td>12348</td>
+                                            <td>Salome</td>
+                                            <td class="center">Peralta</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>5</td>
+                                            <td>12349</td>
+                                            <td>Vannesa</td>
+                                            <td class="center">Doria</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>6</td>
+                                            <td>12350</td>
+                                            <td>Gloria</td>
+                                            <td class="center">Vargas</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>7</td>
+                                            <td>12351</td>
+                                            <td>Rafael</td>
+                                            <td class="center">Vargas</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>8</td>
+                                            <td>12352</td>
+                                            <td>Felipe</td>
+                                            <td class="center">Machado</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>9</td>
+                                            <td>12353</td>
+                                            <td>Soledad</td>
+                                            <td class="center">Ruiz</td>
+                                            <td class="center">Activo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>10</td>
+                                            <td>12354</td>
+                                            <td>Marcela</td>
+                                            <td class="center">Solera</td>
+                                            <td class="center">Inactivo</td>
+                                            <td class="center"><table align="center" width="130" border="0">
+                                              <tr>
+                                                <td><a href="#" title="Cambiar estado" class="fa fa-remove fa-2x"></td>
+                                                <td><a href="#" title="Editar" class="fa fa-edit fa-2x"></td>
+                                                <td><a href="#" title="Ver Notas" class="fa fa-search fa-2x"></td>
+                                                <td><a href="#" title="Ver Historial" class="fa fa-calendar fa-2x"></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>11</td>
+                                            <td>12355</td>
+                                            <td>OSX.2+</td>
+                                            <td class="center">1.8</td>
+                                            <td class="center">&nbsp;</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>12</td>
+                                            <td>12356</td>
+                                            <td>OSX.3+</td>
+                                            <td class="center">1.8</td>
+                                            <td class="center">&nbsp;</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>13</td>
+                                            <td>12357</td>
+                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
+                                            <td class="center">1.7</td>
+                                            <td class="center">&nbsp;</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>14</td>
+                                            <td>12358</td>
+                                            <td>Win 98SE+</td>
+                                            <td class="center">1.7</td>
+                                            <td class="center">&nbsp;</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>15</td>
+                                            <td>12360</td>
+                                            <td>Win 98+ / OSX.2+</td>
+                                            <td class="center">1.8</td>
+                                            <td class="center">&nbsp;</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                          
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row"><!-- /.col-lg-6 --><!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <div class="row"><!-- /.col-lg-6 --><!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <div class="row"><!-- /.col-lg-6 --><!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+     </div>
+<div class="footer">2015 &copy; School Admin. Todos los Derechos Reservados.</div>
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
+
+</body>
+
+</html>
